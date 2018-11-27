@@ -95,3 +95,6 @@ El profesor debe poder determinar a un alumno como líder de su grupo
  - El alumno debe estar registrado en la base de datos.
  - El número de grupo debe ser correcto.
  - Si el grupo ya tiene líder, se preguntará al profesor si quiere sustituirlo
+
+
+### La duración total del proyecto será de 21 horas, repartidas en 9 horas la primera semana y el resto en la segunda
