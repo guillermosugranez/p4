@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 unsigned int Agenda::get_maxAlumnos() {
 	return this->_maxAlumnos;
 }
@@ -9,6 +10,7 @@ unsigned int Agenda::get_maxAlumnos() {
 void Agenda::set_maxAlumnos(unsigned int maxAlumnos) {
 	this->_maxAlumnos = maxAlumnos;
 }
+
 
 // Observadores
 //=============================================================================
@@ -31,6 +33,7 @@ list<Alumno> Agenda::buscarAlumno(int) const
 
 	return consulta;
 }
+
 
 // Modificadores
 //=============================================================================
