@@ -11,18 +11,7 @@ El sistema debe poder encontrar un alumno registrado en la base de datos
  - Si se busca por 1er apellido y hay más de un resultado, se pedirá el dni para una nueva búsqueda.
  - Si no hay coincidencias con el término de busqueda, se deberá notificar al profesor.
  
-
-## ID: 002 Mostrar Alumno
-El sistema debe poder mostrar la información de un alumno especificado por el usuario que esté registrado en la base de datos
-
-**Prioridad: 1**
-
----
-
- - Quiero poder consultar toda la información relativa a un alumno registrado.
- - Se podrá mostrar la información de un alumno especificando o bien su dni, sus apellidos o el equipo al que pertenece.
-
-## ID: 003 Introducir Alumno
+ ## ID: 002 Introducir Alumno
 El profesor debe poder registrar a un nuevo alumno en la base de datos
 
 **Prioridad: 1**
@@ -32,10 +21,20 @@ El profesor debe poder registrar a un nuevo alumno en la base de datos
  - Quiero poder registrar toda la información relativa a un nuevo alumno.
  - Previamente, se deberá comprobar si el alumno ya está registrado en el sistema o no.
 
+## ID: 003 Mostrar Alumno
+El sistema debe poder mostrar la información de un alumno especificado por el usuario que esté registrado en la base de datos
+
+**Prioridad: 1**
+
+---
+
+ - Quiero poder consultar toda la información relativa a un alumno registrado.
+ - Se podrá mostrar la información de un alumno especificando o bien su dni, sus apellidos o el equipo al que pertenece.
+
 ## ID: 004 Borrar Alumno
 El profesor debe poder borrar a un alumno en la base de datos
 
-**Prioridad: 1**
+**Prioridad: 2**
 
 ---
 
