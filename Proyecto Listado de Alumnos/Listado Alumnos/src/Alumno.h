@@ -6,20 +6,41 @@
 class Alumno : public Persona {
 
 private:
-	int _grupo;
-	bool _esLider;
-	int _cursoMasAlto;
+	int grupo_;
+	bool esLider_;
+	int cursoMasAlto_;
 
 public:
 
-	Alumno(const string &email, const string &dni);
+	//CONSTRUCTOR
 
-	int getCursoMasAlto() const;
-	void setCursoMasAlto(int cursoMasAlto);
-	bool isEsLider() const;
-	void setEsLider(bool esLider);
-	int getGrupo() const;
+	Alumno(string dni, string email, string nombre = "", string primerApellido = "", string segundoApellido = "", string fechaNacimiento = "", double telefono = 0, string direccion = "", string codPostal = "", int grupo = 0, bool esLider = false, int cursoMasAlto = 0): Persona(dni, email, nombre, primerApellido, segundoApellido, fechaNacimiento, telefono, direccion, codPostal) {
+		grupo_ = grupo;
+		esLider_ = esLider;
+		cursoMasAlto_ = cursoMasAlto;
+	}
+
+
+	//OBSERVADORES
+
+	int getGrupo() const {
+		return grupo_;
+	}
+
+	bool getEsLider() const {
+		return esLider_; 
+	}
+
+	int getCursoMasAlto() const {
+		return cursoMasAlto_;
+	}
+
+
+	//MODIFICADORES
+	
 	void setGrupo(int grupo);
+	void setCursoMasAlto(int cursoMasAlto);
+	void setEsLider(bool esLider);
 };
 
 #endif
