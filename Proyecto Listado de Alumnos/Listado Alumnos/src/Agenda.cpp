@@ -35,7 +35,7 @@ list <Alumno> Agenda::buscarAlumno(string const &nombre, int criterioBusqueda) c
 
 		//Buscamos por su primer apellido.
 		if (criterioBusqueda == 2) {
-			if (it->primerApellido() == nombre) {
+			if (it->getPrimerApellido() == nombre) {
 				consulta.push_back(*it);
 			}
 		}
