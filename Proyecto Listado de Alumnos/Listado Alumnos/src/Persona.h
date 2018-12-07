@@ -65,23 +65,23 @@ public:
 
 	//MODIFICADORES
 
-	inline void setDni(string dni) {
+	inline void setDni(string const &dni) {
 		dni_ = dni;
 	}
 
-	inline void setNombre(string nombre) {
+	inline void setNombre(string const &nombre) {
 		nombre_ = nombre;
 	}
 
-	inline void setPrimerApellido(string primerApellido) {
+	inline void setPrimerApellido(string const &primerApellido) {
 		primerApellido_ = primerApellido;
 	}
 
-	inline void setSegundoApellido(string segundoApellido) {
+	inline void setSegundoApellido(string const &segundoApellido) {
 		segundoApellido_ = segundoApellido;
 	}
 
-	inline void setFechaNacimiento(string fechaNacimiento) {
+	inline void setFechaNacimiento(string const &fechaNacimiento) {
 		fechaNacimiento_ = fechaNacimiento;
 	}
 
@@ -89,15 +89,15 @@ public:
 		telefono_ = telefono;
 	}
 
-	inline void setEmail(string email) {
+	inline void setEmail(string const &email) {
 		email_ = email;
 	}
 
-	inline void setDireccion(string direccion) {
+	inline void setDireccion(string const &direccion) {
 		direccion_ = direccion;
 	}
 
-	inline void setCodPostal(string codPostal) {
+	inline void setCodPostal(string const &codPostal) {
 		codPostal_ = codPostal;
 	}
 };
