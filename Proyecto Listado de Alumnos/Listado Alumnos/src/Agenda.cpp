@@ -9,15 +9,18 @@ using namespace std;
 
 
 
-void Agenda::listarAlumnos(int criterio, bool orden) const {
-	
+void Agenda::listarAlumnos(bool orden) const {
+	list <Alumno> lista;
+	list <Alumno>::iterator it;
+
+	for (it = lista.begin(); it != lista.end(); it++) {
+		//NO SE COMO LISTAR A LOS ALUMNOS EN LENGUAJE MARKDOWN.
+	}	
 }
 
-list<Alumno> Agenda::buscarAlumno(const string &nombre, int criterioBusqueda) const {
-	list<Alumno> consulta;
-
-
-
+list <Alumno> Agenda::buscarAlumno(string nombre, int criterioBusqueda) const {
+	list <Alumno> consulta;
+	
 	return consulta;
 }
 

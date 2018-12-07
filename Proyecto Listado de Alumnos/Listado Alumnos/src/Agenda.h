@@ -13,6 +13,7 @@ class Agenda {
 
 private:
 	unsigned int maxAlumnos_;
+	int numAlumnos_;
 	list<Alumno> lista_;
 
 public:
@@ -20,7 +21,18 @@ public:
 	//CONSTRUCTOR
 	//===========
 
-	Agenda();
+	/*
+	Nombre: Agenda.
+	Objetivo: Inicializar por defecto las variables de la clase Agenda.
+	Parametros de entrada:
+		- Ninguno.
+	Devuelve:
+		- Nada.
+	*/
+	Agenda() {
+		maxAlumnos_ = 150;
+		numAlumnos_ = 0;
+	}
 
 
 
@@ -43,23 +55,22 @@ public:
 	Nombre: listarAlumnos.
 	Objetivo: El sistema quiere leer todos los alumnos inscritos en el sistema.
 	Parametros de entrada:
-		- int: Número entero cuyo valor es el criterio por el que queremos listar a los alumnos.
 		- bool: Se definirá ascendente para TRUE o desendente para FALSE.
 	Devuelve:
 		- Nada.
 	*/
-	void listarAlumnos(int criterio, bool orden) const;
+	void listarAlumnos(bool orden) const;
 
 	/*
 	Nombre: buscarAlumno.
 	Objetivo: Buscar a un alumno en la base de datos.
 	Parametros de entrada:
-		- const string: Cadena de caracteres introducida por teclado pasada por referencia.
+		- string: Cadena de caracteres introducida por teclado pasada por referencia.
 		- int: Numero entero que define que criterio de búsqueda vamos a utilizar, es decir, queremos buscar por su DNI, apellido o equipo en el que está.
 	Devuelve:
 		- list: Devuelve una lista de alumnos cuyas características han coincidido con el criterio de búsqueda.
 	*/
-	list <Alumno> buscarAlumno(string nombre) const;
+	list <Alumno> buscarAlumno(string nombre, int criterioBusqueda) const;
 
 
 
