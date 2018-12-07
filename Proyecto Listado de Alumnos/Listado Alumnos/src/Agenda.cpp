@@ -18,9 +18,35 @@ void Agenda::listarAlumnos(bool orden) const {
 	}	
 }
 
-list <Alumno> Agenda::buscarAlumno(string nombre, int criterioBusqueda) const {
+list <Alumno> Agenda::buscarAlumno(string const &nombre, int criterioBusqueda) const {
 	list <Alumno> consulta;
-	
+	list <Alumno>::iterator it;
+
+	consulta.clear();
+
+	for (it = lista_.begin(); it != lista_.end(); it++) {
+		
+		//Buscamos por su DNI.
+		if (criterioBusqueda == 1) {
+			if (it->getDni() == nombre) {
+				consulta.push_back(*it);
+			}
+		}
+
+		//Buscamos por su primer apellido.
+		if (criterioBusqueda == 2) {
+			if (it->primerApellido() == nombre) {
+				consulta.push_back(*it);
+			}
+		}
+
+		//Buscamos por el equipo en el que está.
+		if (criterioBusqueda == 3) {
+			if (it->getGrupo() == nombre) {
+				consulta.push_back(*it);
+			}
+		}
+	}
 	return consulta;
 }
 

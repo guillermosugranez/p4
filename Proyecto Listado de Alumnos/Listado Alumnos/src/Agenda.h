@@ -14,7 +14,7 @@ class Agenda {
 private:
 	unsigned int maxAlumnos_;
 	int numAlumnos_;
-	list<Alumno> lista_;
+	list <Alumno> lista_;
 
 public:
 
@@ -70,7 +70,7 @@ public:
 	Devuelve:
 		- list: Devuelve una lista de alumnos cuyas características han coincidido con el criterio de búsqueda.
 	*/
-	list <Alumno> buscarAlumno(string nombre, int criterioBusqueda) const;
+	list <Alumno> buscarAlumno(string const &nombre, int criterioBusqueda) const;
 
 
 
