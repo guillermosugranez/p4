@@ -6,7 +6,7 @@
 
 #include "Persona.h"
 
-class Alumno: public Persona {
+class Alumno:public Persona {
 
 private:
 	int grupo_;
@@ -28,7 +28,7 @@ public:
 	Devuelve:
 		- Nada.
 	*/
-	Alumno(string dni, string email, string nombre = "", string primerApellido = "", string segundoApellido = "", string fechaNacimiento = "", double telefono = 0, string direccion = "", string codPostal = "", int grupo = 0, bool esLider = false, int cursoMasAlto = 0): Persona(dni, email, nombre, primerApellido, segundoApellido, fechaNacimiento, telefono, direccion, codPostal) {
+	Alumno(string const &dni, string const &email, string nombre = "", string primerApellido = "", string segundoApellido = "", string fechaNacimiento = "", double telefono = 0, string direccion = "", string codPostal = "", int grupo = 0, bool esLider = false, int cursoMasAlto = 0): Persona(dni, email, nombre, primerApellido, segundoApellido, fechaNacimiento, telefono, direccion, codPostal) {
 		grupo_ = grupo;
 		esLider_ = esLider;
 		cursoMasAlto_ = cursoMasAlto;

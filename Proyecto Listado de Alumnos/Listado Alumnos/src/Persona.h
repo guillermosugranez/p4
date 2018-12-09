@@ -1,3 +1,6 @@
+//Persona.h
+//Definicion de la clase Persona.
+
 #ifndef PERSONA_H
 #define PERSONA_H
 
@@ -19,10 +22,28 @@ private:
 
 public:
 
-	//CONSTRUCTOR.
+	//CONSTRUCTOR
+	//===========
 
-	Persona(string dni, string email, string nombre = "", string primerApellido = "", string segundoApellido = "", string fechaNacimiento = "", double telefono = 0, string direccion = "", string codPostal = "");
-
+	/*
+	Nombre: Persona.
+	Objetivo: Inicializar por defecto las variables de la clase Persona.
+	Parametros de entrada:
+		- Ninguno.
+	Devuelve:
+		- Nada.
+	*/
+	Persona(string const &dni, string const &email, string nombre = "", string primerApellido = "", string segundoApellido = "", double telefono = 0, string direccion = "", string codPostal = "", string fechaNacimiento = "") {
+		dni_ = dni;
+		email_ = email;
+		nombre_ = nombre;
+		primerApellido_ = primerApellido;
+		segundoApellido_ = segundoApellido_;
+		telefono_ = telefono;
+		direccion_ = direccion;
+		codPostal_ = codPostal;
+		fechaNacimiento_ = fechaNacimiento;
+	}
 
 	//OBSERVADORES
 

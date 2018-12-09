@@ -97,7 +97,7 @@ public:
 	Devuelve:
 		- bool: True si el alumno ha sido insertado con éxito, o False en caso contrario.
 	*/
-	bool insertarAlumno(const Alumno &a);
+	bool insertarAlumno(Alumno const &a);
 
 	/*
 	Nombre: borrarAlumno.
@@ -107,7 +107,7 @@ public:
 	Devuelve:
 		- bool: True si el alumno ha sido borrado con éxito, o False en caso contrario.
 	*/
-	bool borrarAlumno(const Alumno &a);
+	bool borrarAlumno(Alumno const &a);
 
 	/*
 	Nombre: establecerLider.

@@ -52,6 +52,46 @@ list <Alumno> Agenda::buscarAlumno(string const &nombre, int criterioBusqueda) c
 }
 
 
+bool Agenda::insertarAlumno(Alumno const &a) {
+	list <Alumno>::iterator it;
+
+	//Comprobamos si la lista no está completa.
+	if(lista_.size() == maxAlumnos_) {
+		cout << "ERROR. Se ha alcanzado el máximo de Alumnos" << endl;
+		return false;
+	}
+
+	else {
+		for (it = lista_.begin(); it != lista_.end(); it++) {
+			
+			//Comprobamos que tenga un Dni y un Email diferente. (MIRAR SI ESTA BIEN)
+			if ((it->getDni() == a.getDni()) && (it->getEmail() == a.getEmail())) {
+				cout << "Error: el alumno ya existe." << endl;
+				return false;
+			}
+		}
+		lista_.push_back(a);
+
+		return true;
+	}
+}
+
+
+bool Agenda::borrarAlumno(Alumno const &a) {
+	list <Alumno>::iterator it;
+
+	//Solo borraremos al primer alumno con el que coincida el DNI y el Email.
+	for (it = lista_.begin(); it != lista_.end(); it++) {
+		if ((it->getDni() == a.getDni()) && (it->getEmail() == a.getEmail())) {
+			lista_.erase(it);
+			return true;
+		}
+	}
+	cout << "Error: no se ha encontrado al alumno en la base de datos." << endl;
+	return false;
+}
+
+
 bool Agenda::establecerLider(Alumno &a) {
 	list <Alumno>::iterator it;
 
@@ -129,44 +169,4 @@ bool Agenda::modificarAlumno(Alumno &a) {
 	}
 	cout << "Error: no se ha encontrado al alumno en la base de datos." << endl;
 	return false;	
-}
-
-
-bool Agenda::insertarAlumno(const Alumno &a) {
-	list <Alumno>::iterator it;
-
-	//Comprobamos si la lista no está completa.
-	if(lista_.size() == maxAlumnos_) {
-		cout << "ERROR. Se ha alcanzado el máximo de Alumnos" << endl;
-		return false;
-	}
-
-	else {
-		for (it = lista_.begin(); it != lista_.end(); it++) {
-			
-			//Comprobamos que tenga un Dni y un Email diferente. (MIRAR SI ESTA BIEN)
-			if ((it->getDni() == a.getDni()) && (it->getEmail() == a.getEmail())) {
-				cout << "Error: el alumno ya existe." << endl;
-				return false;
-			}
-		}
-		lista_.push_back(a);
-
-		return true;
-	}
-}
-
-
-bool Agenda::borrarAlumno(const Alumno &a) {
-	list <Alumno>::iterator it;
-
-	//Solo borraremos al primer alumno con el que coincida el DNI y el Email.
-	for (it = lista_.begin(); it != lista_.end(); it++) {
-		if ((it->getDni() == a.getDni()) && (it->getEmail() == a.getEmail())) {
-			lista_.erase(it);
-			return true;
-		}
-	}
-	cout << "Error: no se ha encontrado al alumno en la base de datos." << endl;
-	return false;
 }
