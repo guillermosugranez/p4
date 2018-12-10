@@ -1,0 +1,45 @@
+Diagrama de clases: Bien trabajada la herencia. El diagrama en sí está bien, menos dos cosas: la contraseña no habría que almacenarla en el profesor, basta con comprobar lo que se introduce en la terminal con lo que haya en el fichero binario. Faltarían dos funcionalidades más en profesor (crear y guardar fichero, lo que hacen los dos roles), como os dije hay 4 funciones similares, dos las pueden hacer todos (guardar datos y recuperar datos) y las otras dos las puede hacer solo el coordinador (las copias de seguridad, que son las que tenéis). Ah, la multiplicidad en la composición que no se os olvide.
+
+ 
+
+Diagramas de secuencia:
+
+ 
+
+- 001 - Buscar Alumno.jpg: La funcionalidad de buscar alumno no la haría el profesor, vendría del sistema previamente como un mensaje encontrado. Mostrar alumno lo haría la interfaz a partir de la base de datos.
+
+ 
+
+- 002 - Mostrar Alumno.jpg: Sería interesante un loop para mostrar todos los campos de un alumno. Harían falta más comprobaciones.
+
+ 
+
+- 003 - Introducir Alumno.jpg: A grandes rasgos está bien, pero estaría mejor si se determina más con detalle y en lenguaje natural. Los fallos y las correcciones deben de mostrarse con un mensaje en línea discontinua.
+
+ 
+
+- 004 - Borrar Alumno.jpg: Realmente no se está haciendo la acción de borrar en la base de datos.
+
+ 
+
+- 005 - Guardar Copia De Seguridad.jpg: Quizás definir la ruta estaría bien, y comprobar también que hay una lista creada y tiene alumnos, etc.
+
+ 
+
+- 006 - Restaurar Copia De Seguridad.jpg: Igual que en el caso anterior.
+
+ 
+
+- 007 - Modificar Alumno.jpg: Y si tenemos muchos campos a modificar? Lo suyo sería un flujo LOOP que permita modificar campos mientras sea requerido por el profesor.
+
+ 
+
+- 008 - Listar Todos Los Alumnos.jpg: En general está bien, pero estaría mejor si se incluyese alguna comprobación más (o al menos hacerlo de la forma correcta, donde el número de alumnos se le pida a la base de datos).
+
+ 
+
+- 009 - Establecer Líder De Grupo.jpg: El último flujo ALT debería estar dentro del LOOP… y donde se selecciona el que es lider??
+
+ 
+
+La práctica está bien, faltaría añadir más diagramas de secuencia (cargar y guardar ficheros), login y registrar. Meterlos también en los casos de uso, que no los tenéis, y claro, en las historias de usuario.

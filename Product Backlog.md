@@ -96,5 +96,35 @@ El profesor debe poder determinar a un alumno como líder de su grupo
  - El número de grupo debe ser correcto.
  - Si el grupo ya tiene líder, se preguntará al profesor si quiere sustituirlo
 
+## ID: 010 Registrar
+El profesor debe poder registrarse en el sistema
+
+**Prioridad: 3**
+
+---
+
+ - Quiero poder registrarme en el sistema
+ - Se debe introducir un nombre de usuario que no esté en el sistema
+ - Se debe acompañar con una contraseña
+ - El registro se almacenará en un archivo binario externo junto al restro de registros
+ - Se incluirá el dni del usuario que registró en el registro
+
+## ID: 011 Login
+El profesor debe poder loguearse en el sistema
+
+**Prioridad: 3**
+
+---
+
+ - Quiero poder loguearme en el sistema
+ - Se debe introducir un nombre de usuario que esté registrado en el sistema
+ - Para un loguin correcto, usuario y contraseña deben coincidir
+ - Los datos para el loguin se encuentran en una archivo binario externo
 
 ### La duración total del proyecto será de 21 horas, repartidas en 9 horas la primera semana y el resto en la segunda
+
+
+
+
+
+
