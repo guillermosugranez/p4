@@ -47,22 +47,32 @@ public:
 	//============
 
 	/*
-	Nombre: getMaxAlumnos.
-	Objetivo: Conocer el número máximo de alumnos que hay inscritos en la base de datos.
+	Nombre: getMaxAlumnos_.
+	Objetivo: Imprimir por pantalla el número máximo de alumnos que se pueden inscribir en la base de datos.
 	Parametros de entrada:
 		- Ninguno.
 	Devuelve:
-		- unsigned int: Número entero cuyo valor equivale al número máximo de alumnos inscritos en la base de datos.
+		- unsigned int: Número entero cuyo valor equivale al número máximo de alumnos que se pueden inscribir en la base de datos.
 	*/
 	unsigned int getMaxAlumnos_() const;
 
 	/*
-
+	Nombre: getLista_.
+	Objetivo: Imprimir por pantalla los alumnos que hay inscritos en la base de datos.
+	Parametros de entrada:
+		- Ninguno.
+	Devuelve:
+		- list<Alumno>: Objeto tipo lista <Alumno> que equivale a todos los alumnos que haya inscritos en la base de datos.
 	*/
 	list<Alumno> getLista_() const;
 
 	/*
-
+	Nombre: getNumAlumnos_.
+	Objetivo: Conocer el número de alumnos que hay inscritos en la base de datos.
+	Parametros de entrada:
+		- Ninguno.
+	Devuelve:
+		- unsigned int: Número entero cuyo valor equivale al número de alumnos inscritos en la base de datos.
 	*/
 	int getNumAlumnos_() const;
 
@@ -103,12 +113,22 @@ public:
 	void setMaxAlumnos_(unsigned int maxAlumnos_);
 
 	/*
-
+	Nombre: setLista_.
+	Objetivo: Modificar la lista de alumnos que hay inscritos en la base de datos.
+	Parametros de entrada:
+		- list<Alumno>: Objeto tipo lista <Alumno> que equivale a todos los alumnos que haya inscritos en la base de datos.
+	Devuelve:
+		- Nada.
 	*/
 	void setLista_(list<Alumno> lista_);
 	
 	/*
-
+	Nombre: setNumAlumnos_.
+	Objetivo: Modificar el número de alumnos que hay inscritos en la base de datos.
+	Parametros de entrada:
+		- unsigned int: Número entero cuyo valor equivale al número de alumnos inscritos en la base de datos.
+	Devuelve:
+		- Nada.
 	*/
 	void setNumAlumnos_(int numAlumnos_);
 
