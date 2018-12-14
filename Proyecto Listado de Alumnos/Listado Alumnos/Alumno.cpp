@@ -2,7 +2,13 @@
 //Funciones de la clase Alumno.
 
 #include "Agenda.h"
-#include "Alumno.h"
+
+// CONSTRUCTOR
+
+Alumno::Alumno()
+{
+	
+}
 
 // OBSERVADORES
 

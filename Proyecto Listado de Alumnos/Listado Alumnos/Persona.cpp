@@ -3,11 +3,14 @@
 
 #include "Agenda.h"
 
-	//OBSERVADORES
-
-	string Persona::getCodPostal_() const {
-		return codPostal_;
+	// CONSTRUCTOR
+	
+	Persona::Persona()
+	{
+		
 	}
+
+	// OBSERVADORES
 
 	string Persona::getDireccion_() const {
 		return direccion_;
@@ -41,11 +44,7 @@
 		return dni_;
 	}
 
-	// Modificadores
-
-	void Persona::setCodPostal_(string codPostal_) {
-		this->codPostal_ = codPostal_;
-	}
+	// MODIFICADORES
 
 	void Persona::setDireccion_(string direccion_) {
 		this->direccion_ = direccion_;

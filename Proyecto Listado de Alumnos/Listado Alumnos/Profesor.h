@@ -10,6 +10,8 @@ private:
 
 public:
 	
+    Profesor();
+    
 	// CONSTRUCTOR
 	
 	Profesor(const string& dni, const string& email, string nombre, string primerApellido, string segundoApellido, double telefono, string direccion, string codPostal, string fechaNacimiento, bool Coordinador) :
@@ -20,27 +22,15 @@ public:
 
 	// DESTRUCTOR
 
-	//~Profesor();
+	// ~Profesor();
 
 	// OBSERVADORES
 
-	bool getCoordinador() const;
-        
-	string getUsuario() const;
-        
-	string getPass() const;
+	bool getCoordinador_() const;
 
 	// MODIFICADORES
 
-	void setCoordinador(bool Coordinador);
-
-	void setUsuario(int Usuario);
-
-	void setPass(int pass);
-
-	void guardarDatos(const char * nombreArchivo);
-
-	void recuperarDatos(const char * nombreArchivo);
+	void setCoordinador_(bool Coordinador);
 };
 
 #endif

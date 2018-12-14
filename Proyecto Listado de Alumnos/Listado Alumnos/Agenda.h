@@ -11,6 +11,12 @@
 #include <list>
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <vector>
+#include <sstream>
+#include <limits>
+#include <cstdio>
+
 using namespace std;
 
 class Alumno;
@@ -18,9 +24,26 @@ class Alumno;
 class Agenda {
 
 private:
-	unsigned int maxAlumnos_;
+	int maxAlumnos_;
 	int numAlumnos_;
-	list<Alumno> lista_;
+	Alumno ** lista_;
+		
+	// Funciones auxiliares
+	
+	/*
+	 * 
+	 */
+	bool comprobarDni(const string &s) const;
+	
+	/*
+	 * 
+	 */
+	bool comprobarEmail(const string &s) const;
+	
+	/*
+	 * 
+	 */
+	void liberarMemoria();
 
 public:
 
@@ -35,44 +58,42 @@ public:
 	Devuelve:
 		- Nada.
 	*/
-	Agenda() {
+	Agenda()
+	{
 		maxAlumnos_ = 150;
 		numAlumnos_ = 0;
+		lista_ = new Alumno * [maxAlumnos_];
 	}
 
 	// DESTRUCTOR
-	//~Agenda();
+		
+	~Agenda()
+	{
+		for(int i = 0; i < numAlumnos_; i++)
+			delete lista_[i];
 
-	//OBSERVADORES
-	//============
+		delete [] lista_;
+	}
+
+	// OBSERVADORES
 
 	/*
-	Nombre: getMaxAlumnos_.
-	Objetivo: Imprimir por pantalla el número máximo de alumnos que se pueden inscribir en la base de datos.
+	Nombre: getMaxAlumnos.
+	Objetivo: Conocer el número máximo de alumnos que hay inscritos en la base de datos.
 	Parametros de entrada:
 		- Ninguno.
 	Devuelve:
-		- unsigned int: Número entero cuyo valor equivale al número máximo de alumnos que se pueden inscribir en la base de datos.
+		- unsigned int: Número entero cuyo valor equivale al número máximo de alumnos inscritos en la base de datos.
 	*/
 	unsigned int getMaxAlumnos_() const;
 
 	/*
-	Nombre: getLista_.
-	Objetivo: Imprimir por pantalla los alumnos que hay inscritos en la base de datos.
-	Parametros de entrada:
-		- Ninguno.
-	Devuelve:
-		- list<Alumno>: Objeto tipo lista <Alumno> que equivale a todos los alumnos que haya inscritos en la base de datos.
+
 	*/
-	list<Alumno> getLista_() const;
+	Alumno ** getLista_() const;
 
 	/*
-	Nombre: getNumAlumnos_.
-	Objetivo: Conocer el número de alumnos que hay inscritos en la base de datos.
-	Parametros de entrada:
-		- Ninguno.
-	Devuelve:
-		- unsigned int: Número entero cuyo valor equivale al número de alumnos inscritos en la base de datos.
+
 	*/
 	int getNumAlumnos_() const;
 
@@ -84,7 +105,7 @@ public:
 	Devuelve:
 		- Nada.
 	*/
-	void listarAlumnos(bool orden) const;
+	void listarTodosLosAlumnos();
 
 	/*
 	Nombre: buscarAlumno.
@@ -95,12 +116,9 @@ public:
 	Devuelve:
 		- list: Devuelve una lista de alumnos cuyas características han coincidido con el criterio de búsqueda.
 	*/
-	list <Alumno> buscarAlumno(string const &nombre, int criterioBusqueda) const;
+	Alumno * buscarAlumno(int &posicion);
 
-
-
-	//MODIFICADORES
-	//=============
+	// MODIFICADORES
 
 	/*
 	Nombre: setMaxAlumnos.
@@ -113,24 +131,14 @@ public:
 	void setMaxAlumnos_(unsigned int maxAlumnos_);
 
 	/*
-	Nombre: setLista_.
-	Objetivo: Modificar la lista de alumnos que hay inscritos en la base de datos.
-	Parametros de entrada:
-		- list<Alumno>: Objeto tipo lista <Alumno> que equivale a todos los alumnos que haya inscritos en la base de datos.
-	Devuelve:
-		- Nada.
+
 	*/
-	void setLista_(list<Alumno> lista_);
+	void setLista_(Alumno ** lista);
 	
 	/*
-	Nombre: setNumAlumnos_.
-	Objetivo: Modificar el número de alumnos que hay inscritos en la base de datos.
-	Parametros de entrada:
-		- unsigned int: Número entero cuyo valor equivale al número de alumnos inscritos en la base de datos.
-	Devuelve:
-		- Nada.
+
 	*/
-	void setNumAlumnos_(int numAlumnos_);
+	void setNumAlumnos_(int numAlumnos);
 
 	/*
 	Nombre: insertarAlumno.
@@ -140,7 +148,7 @@ public:
 	Devuelve:
 		- bool: True si el alumno ha sido insertado con éxito, o False en caso contrario.
 	*/
-	bool insertarAlumno(Alumno const &a);
+	bool insertarAlumno();
 
 	/*
 	Nombre: borrarAlumno.
@@ -150,7 +158,7 @@ public:
 	Devuelve:
 		- bool: True si el alumno ha sido borrado con éxito, o False en caso contrario.
 	*/
-	bool borrarAlumno(Alumno const &a);
+	bool borrarAlumno();
 
 	/*
 	Nombre: establecerLider.
@@ -160,7 +168,7 @@ public:
 	Devuelve:
 		- bool: True si el alumno ha sido borrado con éxito, o False en caso contrario.
 	*/
-	bool establecerLider(Alumno &a);
+	bool establecerLider();
 
 	/*
 	Nombre: modificarAlumno.
@@ -170,7 +178,32 @@ public:
 	Devuelve:
 		- bool: True si el alumno ha sido modificado con éxito, o False en caso contrario.
 	*/
-	bool modificarAlumno(Alumno &a);
+	bool modificarAlumno();
+		
+	/*
+	 * 
+	 */
+	void mostrarAlumno() ;
+	
+	/*
+	* Inicializa la agenda con la información almacenada en el fichero determinado por Conf
+	*/
+	bool cargarDatos(const string &s); // Lo realiza el sistema
+	
+	/*
+	* Borra todo y lo guarda como si fuera nuevo
+	*/
+	bool guardarCambios(const string &s); // Cualquier profesor
+	
+	/*
+	* Guarda la información pero en un archivo externo
+	*/
+	bool guardarCopiaSeguridad(Profesor * p); // Solo si es coordinador
+	
+	/*
+	* Carga la información, pero de un archivo externo
+	*/
+	bool cargarCopiaSeguridad(Profesor * p); // Solo si es coordinador
 };
 
 #endif

@@ -9,9 +9,9 @@
 class Alumno:public Persona {
 
 private:
-	int grupo_;
-	bool esLider_;
-	int cursoMasAlto_;
+    int grupo_;
+    bool esLider_;
+    int cursoMasAlto_;
 
 public:
 
@@ -19,6 +19,7 @@ public:
 	//===========
 
 	Alumno();
+        
 	/*
 	Nombre: Alumno.
 	Objetivo: Inicializar por defecto las variables de la clase Alumno.
@@ -71,7 +72,6 @@ public:
 		- 
 	*/
 	int getCursoMasAlto_() const;
-
 
 	//MODIFICADORES
 	//=============

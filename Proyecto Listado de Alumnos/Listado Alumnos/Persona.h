@@ -16,16 +16,16 @@ private:
 	string primerApellido_;
 	string segundoApellido_;
 	string fechaNacimiento_;
-	double telefono_;
+	int telefono_;
 	string email_;
 	string direccion_;
-	string codPostal_;
 
 public:
 
     // CONSTRUCTOR
 
     Persona();
+    
 	/*
 	Nombre: Persona.
 	Objetivo: Inicializar por defecto las variables de la clase Persona.
@@ -39,10 +39,9 @@ public:
 		email_ = email;
 		nombre_ = nombre;
 		primerApellido_ = primerApellido;
-		segundoApellido_ = segundoApellido_;
+		segundoApellido_ = segundoApellido;
 		telefono_ = telefono;
 		direccion_ = direccion;
-		codPostal_ = codPostal;
 		fechaNacimiento_ = fechaNacimiento;
 	}
 
@@ -50,8 +49,6 @@ public:
 	//virtual ~Persona();
         
 	//OBSERVADORES
-	
-	string getCodPostal_() const;
 
 	string getDireccion_() const;
 
@@ -71,9 +68,6 @@ public:
 
 
 	//MODIFICADORES
-
-	
-	void setCodPostal_(string codPostal_);
 
 	void setDireccion_(string direccion_);
 
