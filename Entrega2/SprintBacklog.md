@@ -30,5 +30,23 @@ Las tareas a realizar en este Sprint son las siguientes:
 	- Establecer líder de grupo
 		- Debe ser realizada por Juan Carlos
 		- Duración: 2h
+	- Registrar
+		- Debe ser realizada por SM
+		- Duración: 2h
+	- Login
+		- Debe ser realizada por Pedro
+		- Duración: 2h
+	- Guardar Datos
+		- Debe ser realizada por Juan Carlos
+		- Duración: 2h
+	- Cargar datos
+		- Debe ser realizada por SM
+		- Duración: 2h
+	- Main
+		- Debe ser realizada por Pedro
+		- Duración: 2h
+	- Resto de funciones auxiliares
+		- Debe ser realizada por Juan Carlos
+		- Duración: 2h
 
-### Horas totales en este Sprint : 12h
+### Horas totales en este Sprint : 26h

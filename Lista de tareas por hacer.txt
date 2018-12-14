@@ -1,0 +1,22 @@
+Lista de tareas por hacer
+
+- Se han añadido dos casos de uso más:
+	- Uno es para guardar los cambios en el archivo por defecto
+	- Otro es para cargar copia del archivo por defecto
+
+	Nota: El archivo por defecto se carga en el main
+	Nota: Estas dos acciones las puede hacer cualquier profesor
+
+- Los dos que ya había, se han modificado
+	- Guardar copia de seguridad permite guardar los cambios en un archivo nuevo especificando la ruta
+	- Restaurar copia de seguridad permite modificar el archivo por defecto y especificar una ruta nueva
+
+	Nota: Estas dos acciones últimas son las que solo puede hacer el coordinador
+
+* HAY QUE HACER
+
+Los diagramas correspondientes (Casos de uso y secuencia)
+Los casos de uso (p2)
+
+Se ha modificado el diagrama de clases (hay que tenerlo en cuenta para el resto de tareas)
+También se han modificado las HU, el product backlog y los sprints
