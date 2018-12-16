@@ -4,6 +4,8 @@
 #include "Agenda.h"
 
 
+bool comprobarUsuario(const string &u, string &p, bool &coordinador);
+
 /*
 Nombre: iniciarSesion.
 Objetivo: Comprobar si el usuario y contraseña son correctos.
