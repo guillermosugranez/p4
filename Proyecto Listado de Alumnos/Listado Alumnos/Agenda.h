@@ -27,21 +27,21 @@ private:
 	int maxAlumnos_;
 	int numAlumnos_;
 	Alumno ** lista_;
-		
+
 	// Funciones auxiliares
-	
+
 	/*
-	 * 
+	 *
 	 */
 	bool comprobarDni(const string &s) const;
-	
+
 	/*
-	 * 
+	 *
 	 */
 	bool comprobarEmail(const string &s) const;
-	
+
 	/*
-	 * 
+	 *
 	 */
 	void liberarMemoria();
 
@@ -66,7 +66,7 @@ public:
 	}
 
 	// DESTRUCTOR
-		
+
 	~Agenda()
 	{
 		for(int i = 0; i < numAlumnos_; i++)
@@ -88,17 +88,27 @@ public:
 	unsigned int getMaxAlumnos_() const;
 
 	/*
-
+	Nombre: getLista_.
+	Objetivo: Devolver la lista de alumnos.
+	Parametros de entrada:
+		- Ninguno.
+	Devuelve:
+		- Alumno: Lsta de alumnos.
 	*/
 	Alumno ** getLista_() const;
 
 	/*
-
+	Nombre: getNumAlumnos_.
+	Objetivo: Devolver el numerod e alumnos en una campo.
+	Parametros de entrada:
+		- Ninguno.
+	Devuelve:
+		- int: Numero de alumnos.
 	*/
 	int getNumAlumnos_() const;
 
 	/*
-	Nombre: listarAlumnos.
+	Nombre: listarTodosLosAlumnos.
 	Objetivo: El sistema quiere leer todos los alumnos inscritos en el sistema.
 	Parametros de entrada:
 		- bool: Se definirá ascendente para TRUE o desendente para FALSE.
@@ -124,19 +134,29 @@ public:
 	Nombre: setMaxAlumnos.
 	Objetivo: Modificar el número máximo de alumnos que hay inscritos en la base de datos.
 	Parametros de entrada:
-		- unsigned int: Número entero cuyo valor es el nuevo valor de _maxAlumnos. 
+		- unsigned int: Número entero cuyo valor es el nuevo valor de _maxAlumnos.
 	Devuelve:
 		- Nada.
 	*/
 	void setMaxAlumnos_(unsigned int maxAlumnos_);
 
 	/*
-
+	Nombre: setLista_.
+	Objetivo: Modificar la lista.
+	Parametros de entrada:
+		- Alumno: Alumno con el que interactúa.
+	Devuelve:
+		- Nada.
 	*/
 	void setLista_(Alumno ** lista);
-	
-	/*
 
+	/*
+	Nombre: setNumAlumnos_.
+	Objetivo: Modifica el número máximo de alumnos registrados.
+	Parametros de entrada:
+		- int: Número actual de alumnos.
+	Devuelve:
+		- Nada.
 	*/
 	void setNumAlumnos_(int numAlumnos);
 
@@ -162,7 +182,7 @@ public:
 
 	/*
 	Nombre: establecerLider.
-	Objetivo: Establece un líder de grupo 
+	Objetivo: Establece un líder de grupo
 	Parametros de entrada:
 		- Alumno: Clase Alumno recibida por referencia para borrar a dicho alumno de la base de datos.
 	Devuelve:
@@ -172,38 +192,58 @@ public:
 
 	/*
 	Nombre: modificarAlumno.
-	Objetivo: Modificar los datos de un alumno. 
+	Objetivo: Modificar los datos de un alumno.
 	Parametros de entrada:
 		- Alumno: Clase Alumno recibida por referencia para modificar algun campo de dicho alumno de la base de datos.
 	Devuelve:
 		- bool: True si el alumno ha sido modificado con éxito, o False en caso contrario.
 	*/
 	bool modificarAlumno();
-		
+
 	/*
-	 * 
-	 */
-	void mostrarAlumno() ;
-	
-	/*
-	* Inicializa la agenda con la información almacenada en el fichero determinado por Conf
+	Nombre: mostrarAlumno.
+	Objetivo: Mostrar los datos del alumno.
+	Parametros de entrada:
+		- Ninguno.
+	Devuelve:
+		- Nada.
 	*/
-	bool cargarDatos(const string &s); // Lo realiza el sistema
-	
+	void mostrarAlumno() ;
+
+	/*
+	Nombre: cargarDatos.
+	Objetivo: El sistema inicializa la agenda con la informacion almacenada en el fichero determinado.
+	Parametros de entrada:
+		- string: Nombre del fichero donde están los datos.
+	Devuelve:
+		- bool: True si se encuentra el fichero, o False si no.
+	*/
+	bool cargarDatos(const string &s);
+
 	/*
 	* Borra todo y lo guarda como si fuera nuevo
 	*/
 	bool guardarCambios(const string &s); // Cualquier profesor
-	
+
 	/*
-	* Guarda la información pero en un archivo externo
+	Nombre: guardarCopiaSeguridad.
+	Objetivo: Guarda los datos de los alumnos en un fichero.
+	Parametros de entrada:
+		- Profesor: Debe recibir la persona-profesor.
+	Devuelve:
+		- bool: True si el usuario es coordinador y se ha realizado con éxito, o False si no.
 	*/
-	bool guardarCopiaSeguridad(Profesor * p); // Solo si es coordinador
-	
+	bool guardarCopiaSeguridad(Profesor * p);
+
 	/*
-	* Carga la información, pero de un archivo externo
+	Nombre: cargarCopiaSeguridad.
+	Objetivo: Carga los datos de la copia de seguridad.
+	Parametros de entrada:
+		- Profesor: Debe recibir la persona-profesor.
+	Devuelve:
+		- bool: True si el usuario es coordinador y se ha realizado con éxito, o False si no.
 	*/
-	bool cargarCopiaSeguridad(Profesor * p); // Solo si es coordinador
+	bool cargarCopiaSeguridad(Profesor * p);
 };
 
 #endif
